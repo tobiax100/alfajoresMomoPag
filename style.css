@@ -1,0 +1,753 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background-color: #fffaf0;
+    color: #333;
+    padding-top: 80px; /* Para dar espacio al navbar fijo */
+}
+
+header {
+    background-color: #e67e22;
+    padding: 15px 30px;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    display: inline-block;
+    margin: 0;
+    font-size: 24px;
+}
+
+nav {
+ float: right;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffedd5;
+}
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #e67e22;
+}
+h3{
+    margin-bottom: 20px;
+    color: #e67e22;
+
+}
+
+.product {
+    display: inline-block;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 250px;
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #e67e22;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+button {
+    width: 100%;
+    background-color: #e67e22;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #d35400;
+}
+
+
+footer {
+    background-color: #e67e22;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+footer .social a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+footer .social a:hover {
+    color: #ffedd5;
+}
+
+
+.cart-container {
+    position: relative;
+}
+
+.cart-icon {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.cart-dropdown { display: none; 
+    position: absolute; 
+    right: 0; 
+    top: 30px; 
+    background-color: white; 
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    width: 600px; /* Hacemos el menú desplegable más ancho */ 
+    max-height: 600px; /* Establecemos un tamaño máximo */ 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+    z-index: 1000; padding: 15px; 
+    overflow-x: hidden; /* Eliminamos el scroll horizontal */ 
+} 
+
+.cart-dropdown table { 
+    width: 100%; 
+    border-collapse: collapse;
+ } 
+    .cart-dropdown th, .cart-dropdown td { 
+        padding: 12px; /* Aumentamos el padding para mejor legibilidad */ 
+        text-align: left; 
+        border-bottom: 1px solid #ddd; 
+        font-size: 14px; /* Aumentamos el tamaño de la fuente */
+         color: #333; /* Usamos un color oscuro para el texto */ } 
+         .cart-dropdown th { 
+            background-color: #f8f8f8;
+             font-weight: bold; 
+             color: #555; /* Color ligeramente más claro para los encabezados */}
+
+.cart-dropdown th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+    color: #555; /* Color ligeramente más claro para los encabezados */
+}
+
+.cart-dropdown { max-height: 300px; 
+    /* Altura máxima del contenedor */
+     overflow-y: auto; /* Permite el scroll vertical */ 
+     border: 1px solid #ccc; /* Bordes alrededor del contenedor */ 
+     padding: 10px; /* Espaciado interno */ 
+     background-color: #f9f9f9; /* Color de fondo */ 
+    }
+
+.cart-dropdown button:hover {
+    background-color: #d35400;
+}
+
+/* Mostrar el menú desplegable al hacer hover */
+.cart-container:hover .cart-dropdown {
+    display: block;
+}
+
+.product .price {
+    font-size: 1.5em; /* Aumenta el tamaño de la fuente */
+    color: #ff4500; /* Cambia el color a un naranja vibrante */
+    font-weight: bold; /* Hace el texto en negrita */
+    margin-top: 10px; /* Añade un margen superior */
+    display: block; /* Asegura que se muestre en su propia línea */
+}
+
+.product .agregar-carrito {
+    background-color: #ff4500; /* Fondo naranja */
+    color: white; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Muestra el cursor de puntero al pasar sobre el botón */
+    font-size: 1em; /* Tamaño de la fuente */
+    transition: background-color 0.3s ease; /* Transición suave para el fondo */
+}
+
+.product .agregar-carrito:hover {
+    background-color: #e63e00; /* Fondo más oscuro al pasar sobre el botón */
+}
+
+
+.borrar-curso {
+    display: inline-block;      /* Muestra el enlace como un bloque en línea */
+    padding: 5px 10px;          /* Espaciado interno para hacer clic más fácil */
+    background-color: #ff0000;  /* Fondo rojo para atención */
+    color: #ffffff;             /* Texto blanco para contraste */
+    text-decoration: none;      /* Elimina el subrayado del texto */
+    border-radius: 5px;         /* Bordes redondeados para un estilo moderno */
+    font-weight: bold;          /* Texto en negrita */
+    font-size: 14px;            /* Tamaño de la fuente */
+    cursor: pointer;            /* Cambia el cursor al pasar sobre el enlace */
+    transition: background-color 0.3s ease;  /* Transición suave al cambiar el color */
+}
+
+.borrar-curso:hover {
+    background-color: #cc0000;  /* Fondo más oscuro al pasar sobre el enlace */
+}
+.boton-vaciar-carrito {
+     background-color: #cccccc; /* Color de fondo gris */ 
+    color: #333; /* Color del texto */ 
+    padding: 10px 20px; /* Espaciado interno */ 
+    border: none; /* Sin borde */ 
+    border-radius: 5px; /* Bordes redondeados */ 
+    font-size: 14px; /* Tamaño de la fuente */ 
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    display: block; /* Muestra el botón como un bloque */ 
+    margin: 10px auto; /* Centra el botón dentro del contenedor */
+    width: 80%; /* Ancho del botón */
+    text-align: center; /* Alineación del texto */ 
+    }
+    .boton-vaciar-carrito:hover { 
+        background-color: #bbbbbb; /* Cambia el color de fondo al pasar el cursor */
+    }
+
+    .rating-container {
+        text-align: center;
+        padding: 20px;
+        margin: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .stars {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    
+    .star {
+        font-size: 2em;
+        color: #ddd;
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
+    
+    .star:hover,
+    .star.selected {
+        color: #ff4500;
+    }
+    
+    textarea#user-message {
+        width: 80%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin: 10px 0;
+        resize: vertical;
+    }
+    
+    button#submit-rating {
+        background-color: #28a745; /* Fondo verde */
+        color: white; /* Texto blanco */
+        padding: 10px 20px; /* Espaciado interno */
+        border: none; /* Sin borde */
+        border-radius: 5px; /* Bordes redondeados */
+        cursor: pointer; /* Muestra el cursor de puntero al pasar sobre el botón */
+        font-size: 1em; /* Tamaño de la fuente */
+        transition: background-color 0.3s ease; /* Transición suave para el fondo */
+        margin-top: 10px; /* Espaciado superior */
+    }
+    
+    button#submit-rating:hover {
+        background-color: #218838; /* Fondo más oscuro al pasar sobre el botón */
+    }
+    
+    #rating-display {
+        font-size: 1.2em;
+        margin-top: 10px;
+    }
+
+
+    #alert-container {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        width: 300px;
+        z-index: 1000;
+    }
+    
+    .alert {
+        background-color: #f44336; /* Rojo */
+        color: white;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        animation: fadeout 3s forwards;
+    }
+    
+    @keyframes fadeout {
+        0% {opacity: 1;}
+        90% {opacity: 1;}
+        100% {opacity: 0;}
+    }
+
+    
+    .carousel {
+        position: relative;
+        max-width: 500px !important; /* Tamaño reducido del carrusel */
+        margin: auto;
+        overflow: hidden;
+        background-color: none; /* Añade un fondo para que sea más visible */
+        border-radius: 10px; /* Bordes redondeados */
+
+    }
+    
+    .carousel-inner {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+    
+    .carousel-item {
+        min-width: 100% !important;
+        box-sizing: border-box;
+        position: relative;
+    }
+    
+    .carousel img {
+        width: 100%;
+        height: auto; /* Asegura que la imagen se ajuste correctamente */
+        border-radius: 10px 10px 0 0; /* Bordes redondeados en la parte superior */
+    }
+    
+    .carousel-text {
+        text-align: center;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 3px 5px;
+        border-radius: 3px;
+        font-size: 12px; /* Ajusta el tamaño del texto */
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+    
+    .carousel-item.active .carousel-text {
+        opacity: 1;
+    }
+    
+    .carousel-control {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        border: none;
+        color: white;
+        padding: 3px;
+        cursor: pointer;
+        z-index: 100;
+        font-size: 12px; /* Tamaño de la flecha */
+        opacity: 0.7; /* Semitransparente */
+        transition: opacity 0.3s;
+        width: 30px; /* Ancho de los botones */
+        height: 30px; /* Altura de los botones */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%; /* Bordes redondeados */
+    }
+    
+    .carousel-control:hover {
+        opacity: 1; /* Más visible al pasar el cursor */
+    }
+    
+    .carousel-control.prev {
+        left: 5px;
+    }
+    
+    .carousel-control.next {
+        right: 5px;
+    }
+    
+    
+    
+
+    .recipe-section { max-width: 800px;
+         margin: 20px auto; 
+         padding: 20px; background-color: #fff; 
+         border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        } .recipe-section h2 { color: #e67e22; 
+        } .recipe-section ul, .recipe-section ol { 
+            margin: 10px 0 20px 20px; padding: 0; 
+        } .recipe-section li {
+          margin-bottom: 10px; 
+        } 
+        .recipe-section li::marker {
+                 color: #e67e22; } 
+            .recipe-section li:last-child { 
+                margin-bottom: 0;
+    }
+
+
+    /* Media Query para dispositivos pequeños (por ejemplo, teléfonos móviles) */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    .product {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .carousel {
+    position: relative;
+    max-width: 500px; /* Ajusta el tamaño del carrusel */
+    margin: auto;
+    overflow: hidden;
+    background-color: #f0f0f0; /* Añade un fondo para que sea más visible */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto; /* Asegura que la imagen se ajuste correctamente */
+    border-radius: 10px 10px 0 0; /* Bordes redondeados en la parte superior */
+}
+
+.carousel-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px; /* Ajusta el tamaño del texto */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.carousel-item.active .carousel-text {
+    opacity: 1;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+    z-index: 100;
+    font-size: 18px; /* Tamaño de la flecha */
+    opacity: 0.7; /* Semitransparente */
+    transition: opacity 0.3s;
+    width: 30px; /* Ancho de los botones */
+    height: 30px; /* Altura de los botones */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Bordes redondeados */
+}
+
+.carousel-control:hover {
+    opacity: 1; /* Más visible al pasar el cursor */
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+}
+
+/* Media Query para tabletas (por ejemplo, pantallas de 600px a 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+    nav ul {
+        gap: 15px;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    .product {
+        width: 48%;
+        margin: 10px 1%;
+    }
+
+    .carousel {
+        max-width: 80%;
+    }
+
+    form {
+        max-width: 80%;
+        padding: 25px;
+    }
+}
+
+/* Media Query para pantallas grandes (por ejemplo, monitores) */
+@media (min-width: 1200px) {
+    .product {
+        width: 30%;
+        margin: 15px;
+    }
+
+    .carousel {
+        max-width: 70%;
+    }
+}
+
+.social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.social a {
+    color: #fff;
+    text-decoration: none;
+    margin: 15px 0; /* Aumentamos la separación */
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.social a img {
+    margin-right: 8px;
+    width: 24px; /* Ajusta el tamaño según tus necesidades */
+    height: 24px; /* Ajusta el tamaño según tus necesidades */
+}
+
+.social a:hover {
+    color: #e67e22; /* Cambia el color al pasar el cursor */
+}
+
+
+#message-container {
+    margin-top:60px;
+    text-align: center;
+}
+
+.message {
+    display: inline-block;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin: 15px 0;
+    font-size: 18px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: scale(0.9);
+}
+
+.message.success {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.message.error {
+    background-color: #f44336;
+    color: white;
+}
+
+.message.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#foda {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#foda h2 {
+    color: #e67e22;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.foda-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.foda-item {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1 1 calc(50% - 40px);
+    min-width: 280px;
+    max-width: 45%;
+    text-align: left;
+}
+
+.foda-item h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.foda-item ol {
+    padding-left: 20px;
+}
+
+.foda-item li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+@media (max-width: 600px) {
+    .foda-item {
+        flex: 1 1 100%;
+    }
+}
+
+.reseñaPQ {
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    color: #333;
+    background-color: #f0f0f0;
+    padding: 15px 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
+    max-width: 700px;
+    text-align: justify;
+}
+
+.member-list {
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    color: #444;
+    background-color: #f9f9f9;
+    padding: 15px 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
+    max-width: 700px;
+    text-align: center;
+}
+
+.member-list strong {
+    color: #48e2d0;
+    font-weight: bold;
+}
+.momoImg {
+    width: 35px; /* Ajusta el tamaño del logo según tus necesidades */
+    height: auto;
+    transition: transform 0.3s ease-in-out; /* Transición para el transform */ 
+}
+.momoImg:hover{
+    transform: scale(1.1);
+}

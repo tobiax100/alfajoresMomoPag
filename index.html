@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/Momo.webp" type="image/x-icon">
+    <title>Alfajores Artesanales</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Alfajores Momo </h1> <img class="momoImg" src="img/Momo.webp" >
+        <nav>
+            <ul>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#shop">Tienda</a></li>
+                <li><a href="#Elaboracion">Elaboracion</a></li>
+                <li><a href="#about">Nosotros</a></li>
+                <li><a href="#contact">Contacto</a></li>
+                <li class="cart-container">
+                    <a href="#" class="cart-icon">🛒</a>
+                    <div class="cart-dropdown">
+                        <h3>Tu Carrito</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Nombre</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody id="cart-body">
+                                <tr> 
+                                    <td colspan="4">
+                                     <button id="vaciar-carrito" class="boton-vaciar-carrito">Vaciar Carrito</button> 
+                                     </td> 
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <h2>Bienvenidos a nuestros alfajores artesanales "Momo"</h2>
+        <p>Explora nuestra pagina web reservada para la venta de nuestros alfajores bañados en chocolate</p>
+        <button onclick="window.location.href='#shop'">Explorar Tienda</button>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop">
+        <h2>Nuestros Productos</h2>
+        <div class="product" >
+            <img src="/img/alfajoresnormal.jpg" alt="Alfajor Clásico">
+            <h3>Alfajor Clásico</h3>
+            <p>Relleno de dulce de leche repostero y queso crema</p>
+            <p class="price">$400</p>
+            <button class="agregar-carrito" data-id="1">Añadir al carrito</button>
+        </div>
+        <div class="product" >
+            <img src="/img/ingrediente5.jpg" alt="Alfajor Clásico">
+            <h3>Alfajor De Chocolate</h3>
+            <p>Relleno de dulce de leche repostero y queso crema, bañado en chocolate.</p>
+            <p class="price">$600</p>
+            <button class="agregar-carrito" data-id="2">Añadir al carrito</button>
+        </div>
+       
+    </section>
+
+    <section id="about">
+        <h2>Sobre Nosotros</h2>
+        <p>Somos el grupo 3 de microemprendimiendo de la clase Gestion y Autogestion, en el cual decidimos hacer alfajores un tanto distinto a los de siempre</p> 
+        <p class="member-list">Los miembros somos : <strong>Santino Gonzalez  Simon Midana Tobias Sanchez  y  Santiago Siciliano </strong></p>
+        <p class="reseñaPQ">Elegimos los alfajores bañados en chocolate con relleno de dulce de leche repostero y queso crema por su combinación perfecta de sabores y texturas. El dulce de leche aporta dulzura y consistencia, el queso crema añade suavidad y un toque ácido que equilibra el sabor, y el baño de chocolate ofrece un contraste crujiente. Usamos ingredientes frescos y de alta calidad para asegurar un producto gourmet. Esta combinación diferenciada no solo celebra la tradición repostera, sino que también presenta una propuesta innovadora y exclusiva que destaca en el mercado. 🍫🍬✨</p>
+        
+
+        <img src="img/elegante.jpeg" alt="Momo Elegante" height="400px" width="500px">
+        
+    </section>
+
+    <div class="carousel" id="Elaboracion">
+        <h2>Elaboracion</h2>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/ingredientes1.jpg" alt="Imagen 1">
+                <div class="carousel-text">Los ingredientes utilizados</div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/ingrediente2.jpg" alt="Imagen 2">
+                <div class="carousel-text">la mezcla para las tapas de alfajores</div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/ingrediente3.jpg" alt="Imagen 3">
+                <div class="carousel-text">Las tapas de alfajores ya moldeadas</div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/ingrediente4.jpg" alt="Imagen 4">
+                <div class="carousel-text">las tapas de alfajores ya horneadas</div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/ingrediente5.jpg" alt="Imagen 5">
+                <div class="carousel-text">El resultado final de los alfajores bañados en chocolate</div>
+            </div>
+        </div>
+        <button class="carousel-control prev" >&#10094;</button>
+        <button class="carousel-control next" >&#10095;</button>
+    </div>
+    
+
+    
+    <section class="recipe-section">
+
+        <h2>Receta del Alfajor</h2>
+            <h3>Ingredientes</h3>
+            <ul>
+                <li>360g Harina leudante</li>
+                <li>240g de azúcar</li>
+                <li>2 huevos</li>
+                <li>180g de margarina</li>
+                <li>Esencia de vainilla (dos cucharadas)</li>
+                <li>Chocolate en polvo 4 chucharadas</li>
+                <li>190g de queso crema</li>
+                <li>300g de dulce de leche</li>
+                <li>450g de Chocolate para Bañar</li>
+            </ul>
+            
+            <h3>Instrucciones</h3>
+            <h4>Masa :</h4>
+            <ol>
+                <li>En un recipiente limpio agregar 360g de harina leudante de la marca a preferencia</li>
+                <li>agregar 180g de manteca o margarina</li>
+                <li>incorporar 240g de azucar blanca y poner 2 huevos</li>
+                <li>agregar a la mezcla 2 cucharadas de esencia de vainilla y 4 de chocolate en polvo</li>
+                <li>amazar hasta que quede una masa lisa y dejar reposando en la heladera 15 min aproximadamente</li>
+                <li>sacar y estirar la masa a unos 5mm de espesor, calentar al horno a 180 grados y poner las tapitas de alfajor, sacar y dejar enfriar</li>
+            </ol>
+            <h4>Relleno :</h4>
+            <ol>
+                <li>Mezclar 190g de queso crema con 250g de dulce de leche repostero,mezclar hasta que quede bien</li>
+            </ol>
+            <h4>Armado:</h4>
+            <ol>
+                <li>Agregar a cada tapita una cucharada del relleno previamente hecho y tapar con otra tapita</li>
+                <li>dejar congelar 1 hora y calentar el chocolate semi amargo de reposteria a baño maria hasta que quede liquido
+                </li>
+                <li>Pasar los alfajores y dejar enfriar</li>
+            </ol>
+        </section>
+
+
+        
+    <section id="contact">
+        <h2>Contacto</h2>
+        <form id="form">
+            <div class="form-group">
+                <input type="text" name="to_name" id="to_name" placeholder="Nombre del destinatario" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="from_name" id="from_name" placeholder="Tu nombre" required>
+            </div>
+            <div class="form-group">
+                <textarea name="message" id="message" placeholder="Tu mensaje" required></textarea>
+            </div>
+            <div class="form-group">
+                <input type="email" name="reply_to" id="reply_to" placeholder="Tu correo electrónico" required>
+            </div>
+            <button type="submit" id="button">Enviar correo</button>
+        </form>    
+    </section>
+    <div id="message-container"></div>
+    
+
+
+
+
+    <section id="foda">
+        <h2>Análisis FODA</h2>
+        <div class="foda-container">
+            <div class="foda-item">
+                <h3>Fortalezas</h3>
+                <ol>
+                    <li>Producto Diferenciado: La combinación de dulce de leche repostero, queso crema y baño de chocolate crea un producto único y atractivo para los consumidores.
+                    </li>
+                    <li>Calidad de los Ingredientes: El uso de ingredientes frescos y de alta calidad puede atraer a clientes que buscan productos gourmet.</li>
+                    <li>Flexibilidad en Producción: La producción a pequeña escala permite una mayor flexibilidad y personalización según las demandas del cliente.
+                    </li>
+                </ol>
+                
+            </div>
+            <div class="foda-item">
+                <h3>Oportunidades</h3>
+                <ol>
+                    <li>Tendencias de Consumo: Creciente interés en productos artesanales y locales puede aumentar la demanda.
+                    </li>
+                    <li>Marketing Digital: Utilizar las redes sociales y el marketing digital para alcanzar a un público más amplio, sumandole la creacion de esta pagina web</li>
+                    <li>Innovaciones en sabores: Introducir nuevos sabores y productos de edición limitada puede atraer a clientes que buscan novedad y exclusividad en sus compras.</li>
+                </ol>
+            </div>
+            <div class="foda-item">
+                <h3>Debilidades</h3>
+                <ol>
+                    <li>Capacidad de Producción Limitada: La producción artesanal puede limitar la capacidad de satisfacer una alta demanda.</li>
+                    <li>Costo de Producción: El costo de los ingredientes de alta calidad puede hacer que los precios sean más altos en comparación con la competencia.
+                    </li>
+                    <li>Falta de Reconocimiento de Marca: Como microemprendimiento nuevo, puede haber desafíos para establecer una marca reconocida.
+                    </li>
+                </ol>
+            </div>
+            <div class="foda-item">
+                <h3>Amenazas</h3>
+                <h3>Amenazas</h3>
+                <ol>
+                    <li>Competencia: Existencia de competidores establecidos con productos similares en el mercado.
+                    </li>
+                    <li>Dependencia de Proveedores: La disponibilidad y el costo de los ingredientes pueden verse afectados por problemas con los proveedores.</li>
+                    <li>Condiciones Económicas: Cambios en la economía pueden afectar el poder adquisitivo de los consumidores</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    
+
+    
+    <footer>
+        <p>Elaborado por : Alfajores Momo Gran Canaria 350 Maquinista savio PCIA BS.AS. </p>
+        <strong>© 2024 Alfajores Momo | Todos los derechos reservados</strong>
+        <div class="social">
+            <a href="https://www.instagram.com/alfajores_momo/"target="_blank"><img src="img/instagram (2).png"> Instagram</a>
+            <a href="https://wa.me/5491123175441" target="_blank"> <img src="img/whatsapp.png"> Whatsapp</a>
+            <a href="https://www.google.com.ar/maps/place/Escuela+de+Educaci%C3%B3n+Secundaria+T%C3%A9cnica+N%C2%BA3+%22Eva+Per%C3%B3n%22/@-34.4129493,-58.7727104,15.56z/data=!4m6!3m5!1s0x95bc9f0789854cc7:0xbfabee3cd15e0d3b!8m2!3d-34.4096007!4d-58.7736245!16s%2Fg%2F1233xrv0p?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank"><img src="img/mapas-de-google.png"></img>Localizacion</a>
+        </div>
+
+        <div class="rating-container">
+            <h3>¡Valora nuestra página!</h3>
+            <div class="stars">
+                <span class="star" data-value="1">&#9733;</span>
+                <span class="star" data-value="2">&#9733;</span>
+                <span class="star" data-value="3">&#9733;</span>
+                <span class="star" data-value="4">&#9733;</span>
+                <span class="star" data-value="5">&#9733;</span>
+            </div>
+            <textarea id="user-message" placeholder="Deja tu mensaje aquí..."></textarea>
+            <button id="submit-rating">Enviar Valoración</button>
+            <div id="rating-display">Tu valoración: <span id="rating-value">0</span> estrellas</div>
+        </div>
+        <div id="alert-container"></div>
+        <div id="rating-container">
+            <h3>Valoraciones:</h3>
+            <div id="rating-list">
+                <!-- aca se muestran las valoraciones -->
+            </div>
+        </div>
+        
+        
+        
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript"> emailjs.init('GI2SIhLcqsGHQszQ3')</script>
+    <script src="main.js" defer></script>
+
+</body>
+</html>
